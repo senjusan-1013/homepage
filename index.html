@@ -11,471 +11,500 @@
     content="Suuの作品・キャラクターに関するファン活動・創作ガイドラインです。"
   >
 
-  <style>
-    :root {
-      --bg: #f9f8fc;
-      --surface: #ffffff;
-      --surface-soft: #f6f4fa;
-      --surface-ok: #f3f0f9;
-      --surface-caution: #fdf6fa;
+<style>
+  :root {
+    --bg: #f9f8fc;
+    --surface: #ffffff;
+    --surface-soft: #f6f4fa;
+    --surface-ok: #f3f0f9;
+    --surface-caution: #fdf6fa;
 
-      --text: #2d3456;
-      --text-soft: #7a7490;
-      --text-light: #9990b0;
+    --text: #2d3456;
+    --text-soft: #7a7490;
+    --text-light: #9990b0;
 
-      --border: #e4e0ee;
-      --accent: #c4b0d8;
-      --accent-dark: #6a4a9a;
-      --ng: #7a3a5a;
-      --caution: #8a6a2a;
-    }
+    --border: #e4e0ee;
+    --accent: #c4b0d8;
+    --accent-dark: #6a4a9a;
+    --ng: #7a3a5a;
+    --caution: #8a6a2a;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    html {
-      scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family:
-        "Hiragino Kaku Gothic ProN",
-        "Hiragino Sans",
-        "Yu Gothic",
-        "Meiryo",
-        sans-serif;
-      font-size: 16px;
-      line-height: 1.9;
-    }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family:
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      "Yu Gothic",
+      "Meiryo",
+      sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+  }
 
-    a {
-      color: var(--text);
-    }
+  a {
+    color: var(--text);
+  }
 
-    a:hover {
-      opacity: 0.7;
-    }
+  a:hover {
+    opacity: 0.7;
+  }
 
-    a:focus-visible {
-      outline: 2px solid var(--accent-dark);
-      outline-offset: 3px;
-    }
+  a:focus-visible {
+    outline: 2px solid var(--accent-dark);
+    outline-offset: 3px;
+  }
 
-    /* --------------------
-       Header
-    -------------------- */
+  /* --------------------
+     Header
+  -------------------- */
 
+  .site-header {
+    padding: 28px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .site-header__label {
+    margin: 0 0 8px;
+    color: var(--text-light);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .site-header__title {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .site-header__updated {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 13px;
+  }
+
+  /* --------------------
+     Main
+  -------------------- */
+
+  .main {
+    width: min(100% - 32px, 660px);
+    margin: 0 auto;
+    padding: 36px 0 64px;
+  }
+
+  /* --------------------
+     Intro
+  -------------------- */
+
+  .intro {
+    margin-bottom: 32px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .intro p {
+    margin: 0;
+  }
+
+  /* --------------------
+     Summary
+  -------------------- */
+
+  .summary {
+    margin-bottom: 32px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .summary__heading {
+    margin: 0;
+    padding: 14px 20px;
+    background: var(--text);
+    color: #ede8f0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .summary__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary__column {
+    padding: 18px 20px;
+  }
+
+  .summary__column + .summary__column {
+    border-left: 1px solid var(--border);
+  }
+
+  .summary__label {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .summary__label--ok {
+    color: var(--accent-dark);
+  }
+
+  .summary__label--ng {
+    color: var(--ng);
+  }
+
+  .summary__label--caution {
+    color: var(--caution);
+  }
+
+  .summary__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .summary__list li {
+    padding: 2px 0;
+  }
+
+  .summary__list li::before {
+    content: "- ";
+    color: var(--accent);
+  }
+
+  .summary__caution {
+    padding: 14px 20px;
+    background: var(--surface-caution);
+    border-top: 1px solid var(--border);
+  }
+
+  .summary__contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    background: var(--surface-soft);
+    border-top: 1px solid var(--border);
+  }
+
+  .summary__contact-text {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 15px;
+  }
+
+  .button {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background: var(--text);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* --------------------
+     Divider
+  -------------------- */
+
+  .divider {
+    margin: 0 0 28px;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-align: center;
+  }
+
+  /* --------------------
+     Section
+  -------------------- */
+
+  .section {
+    margin-bottom: 28px;
+  }
+
+  .section__title {
+    margin: 0 0 14px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+  }
+
+  /* --------------------
+     OK
+  -------------------- */
+
+  .block-ok {
+    padding: 20px 24px;
+    background: var(--surface-ok);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+  }
+
+  .block-ok .section__title {
+    color: var(--accent-dark);
+  }
+
+  .ok-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .ok-list li {
+    padding: 3px 0;
+  }
+
+  .ok-list li::before {
+    content: "• ";
+    color: #8a70b8;
+    font-weight: 700;
+  }
+
+  /* --------------------
+     NG
+  -------------------- */
+
+  .block-ng {
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .block-ng__heading {
+    padding: 20px 24px 4px;
+    color: var(--ng);
+  }
+
+  .rule {
+    padding: 18px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .rule__header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .rule__number {
+    flex-shrink: 0;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .rule__title {
+    margin: 0;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .rule__description {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .rule__example {
+    margin: 10px 0 0;
+    padding: 8px 12px;
+    background: var(--bg);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* --------------------
+     Note
+  -------------------- */
+
+  .block-note {
+    padding: 20px 24px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .block-note .section__title {
+    color: var(--text);
+  }
+
+  .note-list {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .note-list li {
+    padding: 4px 0;
+  }
+
+  .note-list li::before {
+    content: "• ";
+    color: var(--accent);
+  }
+
+  /* --------------------
+     Contact
+  -------------------- */
+
+  .contact {
+    margin-top: 36px;
+    padding: 28px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .contact p {
+    margin: 0 0 16px;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .contact .button {
+    padding: 10px 28px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  /* --------------------
+     Footer
+  -------------------- */
+
+  .site-footer {
+    padding: 22px;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .site-footer p {
+    margin: 0;
+  }
+
+  /* --------------------
+     Mobile
+  -------------------- */
+
+  @media (max-width: 480px) {
     .site-header {
-      padding: 24px 16px;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .site-header__label {
-      margin: 0 0 6px;
-      color: var(--text-light);
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
+      padding: 24px 12px;
     }
 
     .site-header__title {
-      margin: 0 0 6px;
       font-size: 20px;
-      font-weight: 700;
-      line-height: 1.5;
     }
 
     .site-header__updated {
-      margin: 0;
-      color: var(--text-light);
-      font-size: 12px;
+      font-size: 13px;
     }
-
-    /* --------------------
-       Main
-    -------------------- */
 
     .main {
-      width: min(100% - 32px, 660px);
-      margin: 0 auto;
-      padding: 32px 0 64px;
+      width: min(100% - 24px, 660px);
+      padding: 28px 0 48px;
     }
-
-    /* --------------------
-       Intro
-    -------------------- */
 
     .intro {
-      margin-bottom: 28px;
-      padding: 20px 24px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-soft);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .intro p {
-      margin: 0;
-    }
-
-    /* --------------------
-       Summary
-    -------------------- */
-
-    .summary {
-      margin-bottom: 28px;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-
-    .summary__heading {
-      margin: 0;
-      padding: 12px 20px;
-      background: var(--text);
-      color: #ede8f0;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      padding: 18px;
     }
 
     .summary__columns {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .summary__column {
-      padding: 16px 18px;
+      display: block;
     }
 
     .summary__column + .summary__column {
-      border-left: 1px solid var(--border);
-    }
-
-    .summary__label {
-      margin: 0 0 8px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-    }
-
-    .summary__label--ok {
-      color: var(--accent-dark);
-    }
-
-    .summary__label--ng {
-      color: var(--ng);
-    }
-
-    .summary__label--caution {
-      color: var(--caution);
-    }
-
-    .summary__list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: var(--text);
-      font-size: 12px;
-      line-height: 1.75;
-    }
-
-    .summary__list li {
-      padding: 1px 0;
-    }
-
-    .summary__list li::before {
-      content: "- ";
-      color: var(--accent);
-    }
-
-    .summary__caution {
-      padding: 12px 18px;
-      background: var(--surface-caution);
       border-top: 1px solid var(--border);
+      border-left: 0;
     }
 
     .summary__contact {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 12px 18px;
-      background: var(--surface-soft);
-      border-top: 1px solid var(--border);
+      display: block;
     }
 
     .summary__contact-text {
-      margin: 0;
-      color: var(--text-soft);
-      font-size: 12px;
+      margin-bottom: 10px;
     }
 
-    .button {
-      display: inline-block;
-      flex-shrink: 0;
-      padding: 6px 14px;
-      background: var(--text);
-      border-radius: 4px;
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    /* --------------------
-       Divider
-    -------------------- */
-
-    .divider {
-      margin: 0 0 24px;
-      color: var(--accent);
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      text-align: center;
-    }
-
-    /* --------------------
-       Section
-    -------------------- */
-
-    .section {
-      margin-bottom: 24px;
-    }
-
-    .section__title {
-      margin: 0 0 12px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    /* --------------------
-       OK
-    -------------------- */
-
-    .block-ok {
-      padding: 18px 22px;
-      background: var(--surface-ok);
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-    }
-
-    .block-ok .section__title {
-      color: var(--accent-dark);
-    }
-
-    .ok-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: 14px;
-    }
-
-    .ok-list li {
-      padding: 3px 0;
-    }
-
-    .ok-list li::before {
-      content: "• ";
-      color: #8a70b8;
-      font-weight: 700;
-    }
-
-    /* --------------------
-       NG
-    -------------------- */
-
-    .block-ng {
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
+    .intro,
+    .block-ok,
+    .block-note {
+      padding: 18px;
     }
 
     .block-ng__heading {
-      padding: 16px 22px 0;
-      color: var(--ng);
+      padding: 18px 18px 4px;
     }
 
     .rule {
-      padding: 16px 22px;
-      border-top: 1px solid var(--border);
-    }
-
-    .rule__header {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 5px;
-    }
-
-    .rule__number {
-      flex-shrink: 0;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
+      padding: 16px 18px;
     }
 
     .rule__title {
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 16px;
     }
 
     .rule__description {
-      margin: 0;
-      color: var(--text-soft);
-      font-size: 13px;
-      line-height: 1.75;
+      font-size: 15px;
     }
-
-    .rule__example {
-      margin: 8px 0 0;
-      padding: 7px 12px;
-      background: var(--bg);
-      border-left: 2px solid var(--accent);
-      border-radius: 0 4px 4px 0;
-      color: var(--text-light);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    /* --------------------
-       Note
-    -------------------- */
-
-    .block-note {
-      padding: 18px 22px;
-      background: var(--surface-soft);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-
-    .block-note .section__title {
-      color: var(--text);
-    }
-
-    .note-list {
-      margin: 6px 0 0;
-      padding: 0;
-      list-style: none;
-      color: var(--text-soft);
-      font-size: 14px;
-    }
-
-    .note-list li {
-      padding: 4px 0;
-    }
-
-    .note-list li::before {
-      content: "• ";
-      color: var(--accent);
-    }
-
-    /* --------------------
-       Contact
-    -------------------- */
 
     .contact {
-      margin-top: 32px;
-      padding: 24px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      text-align: center;
+      padding: 24px 18px;
     }
+  }
 
-    .contact p {
-      margin: 0 0 12px;
-      color: var(--text-soft);
-      font-size: 13px;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
     }
-
-    .contact .button {
-      padding: 10px 28px;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-    }
-
-    /* --------------------
-       Footer
-    -------------------- */
-
-    .site-footer {
-      padding: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--text-light);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    .site-footer p {
-      margin: 0;
-    }
-
-    /* --------------------
-       Mobile
-    -------------------- */
-
-    @media (max-width: 480px) {
-      .site-header {
-        padding: 22px 12px;
-      }
-
-      .site-header__title {
-        font-size: 18px;
-      }
-
-      .main {
-        width: min(100% - 24px, 660px);
-        padding: 24px 0 48px;
-      }
-
-      .summary__columns {
-        display: block;
-      }
-
-      .summary__column + .summary__column {
-        border-top: 1px solid var(--border);
-        border-left: 0;
-      }
-
-      .summary__contact {
-        display: block;
-      }
-
-      .summary__contact-text {
-        margin-bottom: 8px;
-      }
-
-      .intro,
-      .block-ok,
-      .block-note {
-        padding: 14px 16px;
-      }
-
-      .rule {
-        padding: 14px 16px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
@@ -720,7 +749,8 @@
           <li>他の方や会場が関わる場合は、そちらのルールを確認し、必ず従ってください。</li>
           <li>他者の著作物を無断で組み合わせた二次創作は禁止です。第三者の権利を尊重してください。</li>
           <li>二次創作活動において第三者との権利トラブルが発生した場合、Suuは責任を負いません。</li>
-          <li>このガイドラインは予告なく変更する場合があります。変更前に作られた創作には、原則として新しいルールは適用しません。</li>
+          <li>このガイドラインは、より安心してファン活動を楽しんでいただくため、必要に応じて更新することがあります。</li>
+          <li>正確な内容については、最新版のこのページをご確認ください。</li>
           <li>判断に迷う場合はお問い合わせください。</li>
         </ul>
 
