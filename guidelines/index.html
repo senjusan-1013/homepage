@@ -1,1 +1,785 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>ファン活動・創作ガイドライン | Suu</title>
+
+  <meta
+    name="description"
+    content="Suuの作品・キャラクターに関するファン活動・創作ガイドラインです。"
+  >
+
+<style>
+  :root {
+    --bg: #f9f8fc;
+    --surface: #ffffff;
+    --surface-soft: #f6f4fa;
+    --surface-ok: #f3f0f9;
+    --surface-caution: #fdf6fa;
+
+    --text: #2d3456;
+    --text-soft: #7a7490;
+    --text-light: #9990b0;
+
+    --border: #e4e0ee;
+    --accent: #c4b0d8;
+    --accent-dark: #6a4a9a;
+    --ng: #7a3a5a;
+    --caution: #8a6a2a;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family:
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      "Yu Gothic",
+      "Meiryo",
+      sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  a {
+    color: var(--text);
+  }
+
+  a:hover {
+    opacity: 0.7;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent-dark);
+    outline-offset: 3px;
+  }
+
+  /* --------------------
+     Header
+  -------------------- */
+
+  .site-header {
+    padding: 28px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .site-header__label {
+    margin: 0 0 8px;
+    color: var(--text-light);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .site-header__title {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .site-header__updated {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 13px;
+  }
+
+  /* --------------------
+     Main
+  -------------------- */
+
+  .main {
+    width: min(100% - 32px, 660px);
+    margin: 0 auto;
+    padding: 36px 0 64px;
+  }
+
+  /* --------------------
+     Intro
+  -------------------- */
+
+  .intro {
+    margin-bottom: 32px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .intro p {
+    margin: 0;
+  }
+
+  /* --------------------
+     Summary
+  -------------------- */
+
+  .summary {
+    margin-bottom: 32px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .summary__heading {
+    margin: 0;
+    padding: 14px 20px;
+    background: var(--text);
+    color: #ede8f0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .summary__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary__column {
+    padding: 18px 20px;
+  }
+
+  .summary__column + .summary__column {
+    border-left: 1px solid var(--border);
+  }
+
+  .summary__label {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .summary__label--ok {
+    color: var(--accent-dark);
+  }
+
+  .summary__label--ng {
+    color: var(--ng);
+  }
+
+  .summary__label--caution {
+    color: var(--caution);
+  }
+
+  .summary__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .summary__list li {
+    padding: 2px 0;
+  }
+
+  .summary__list li::before {
+    content: "- ";
+    color: var(--accent);
+  }
+
+  .summary__caution {
+    padding: 14px 20px;
+    background: var(--surface-caution);
+    border-top: 1px solid var(--border);
+  }
+
+  .summary__contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    background: var(--surface-soft);
+    border-top: 1px solid var(--border);
+  }
+
+  .summary__contact-text {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 15px;
+  }
+
+  .button {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 8px 16px;
+    background: var(--text);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* --------------------
+     Divider
+  -------------------- */
+
+  .divider {
+    margin: 0 0 28px;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-align: center;
+  }
+
+  /* --------------------
+     Section
+  -------------------- */
+
+  .section {
+    margin-bottom: 28px;
+  }
+
+  .section__title {
+    margin: 0 0 14px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+  }
+
+  /* --------------------
+     OK
+  -------------------- */
+
+  .block-ok {
+    padding: 20px 24px;
+    background: var(--surface-ok);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+  }
+
+  .block-ok .section__title {
+    color: var(--accent-dark);
+  }
+
+  .ok-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .ok-list li {
+    padding: 3px 0;
+  }
+
+  .ok-list li::before {
+    content: "• ";
+    color: #8a70b8;
+    font-weight: 700;
+  }
+
+  /* --------------------
+     NG
+  -------------------- */
+
+  .block-ng {
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .block-ng__heading {
+    padding: 20px 24px 4px;
+    color: var(--ng);
+  }
+
+  .rule {
+    padding: 18px 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .rule__header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .rule__number {
+    flex-shrink: 0;
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .rule__title {
+    margin: 0;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  .rule__description {
+    margin: 0;
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .rule__example {
+    margin: 10px 0 0;
+    padding: 8px 12px;
+    background: var(--bg);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* --------------------
+     Note
+  -------------------- */
+
+  .block-note {
+    padding: 20px 24px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  .block-note .section__title {
+    color: var(--text);
+  }
+
+  .note-list {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .note-list li {
+    padding: 4px 0;
+  }
+
+  .note-list li::before {
+    content: "• ";
+    color: var(--accent);
+  }
+
+  /* --------------------
+     Contact
+  -------------------- */
+
+  .contact {
+    margin-top: 36px;
+    padding: 28px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .contact p {
+    margin: 0 0 16px;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .contact .button {
+    padding: 10px 28px;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  /* --------------------
+     Footer
+  -------------------- */
+
+  .site-footer {
+    padding: 22px;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .site-footer p {
+    margin: 0;
+  }
+
+  /* --------------------
+     Mobile
+  -------------------- */
+
+  @media (max-width: 480px) {
+    .site-header {
+      padding: 24px 12px;
+    }
+
+    .site-header__title {
+      font-size: 20px;
+    }
+
+    .site-header__updated {
+      font-size: 13px;
+    }
+
+    .main {
+      width: min(100% - 24px, 660px);
+      padding: 28px 0 48px;
+    }
+
+    .intro {
+      padding: 18px;
+    }
+
+    .summary__columns {
+      display: block;
+    }
+
+    .summary__column + .summary__column {
+      border-top: 1px solid var(--border);
+      border-left: 0;
+    }
+
+    .summary__contact {
+      display: block;
+    }
+
+    .summary__contact-text {
+      margin-bottom: 10px;
+    }
+
+    .intro,
+    .block-ok,
+    .block-note {
+      padding: 18px;
+    }
+
+    .block-ng__heading {
+      padding: 18px 18px 4px;
+    }
+
+    .rule {
+      padding: 16px 18px;
+    }
+
+    .rule__title {
+      font-size: 16px;
+    }
+
+    .rule__description {
+      font-size: 15px;
+    }
+
+    .contact {
+      padding: 24px 18px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <p class="site-header__label">Fan Activity Guidelines</p>
+    <h1 class="site-header__title">ファン活動・創作ガイドライン</h1>
+    <p class="site-header__updated">最終更新：〇〇年〇〇月</p>
+  </header>
+
+  <main class="main">
+
+    <div class="intro">
+      <p>
+        Suuの作品・キャラクターを使った創作やファン活動を楽しむ際は、
+        以下のガイドラインをご確認ください。
+      </p>
+    </div>
+
+    <section class="summary" aria-labelledby="summary-heading">
+
+      <h2 class="summary__heading" id="summary-heading">
+        Quick Summary — 要点まとめ
+      </h2>
+
+      <div class="summary__columns">
+
+        <div class="summary__column">
+          <p class="summary__label summary__label--ok">✅ OK</p>
+
+          <ul class="summary__list">
+            <li>ファンアート・イラスト・コスプレ</li>
+            <li>二次創作（小説・動画・音楽など）</li>
+            <li>条件付きで有償頒布も可（詳細は下記）</li>
+          </ul>
+        </div>
+
+        <div class="summary__column">
+          <p class="summary__label summary__label--ng">🚫 絶対NG</p>
+
+          <ul class="summary__list">
+            <li>誰かを傷つける・攻撃・差別する目的での利用</li>
+            <li>成人向け・過度な暴力表現を含む創作</li>
+            <li>AI学習データへの使用（現時点）</li>
+            <li>公式作品と誤解される見せ方</li>
+            <li>特定の思想・宗教・政治との結びつけ</li>
+            <li>ファン同士の批判・攻撃</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="summary__caution">
+        <p class="summary__label summary__label--caution">
+          ⚠ 配慮が必要
+        </p>
+
+        <ul class="summary__list">
+          <li>
+            ファン創作（公式ではないこと）であることを、作品や投稿文に明記してください。
+          </li>
+        </ul>
+      </div>
+
+      <div class="summary__contact">
+        <p class="summary__contact-text">
+          ❓ 判断に迷う場合はお問い合わせください
+        </p>
+
+        <!-- 後でお問い合わせフォームのURLに変更 -->
+        <a class="button" href="/contact/">
+          お問い合わせ
+        </a>
+      </div>
+
+    </section>
+
+    <p class="divider" aria-hidden="true">― 詳細 ―</p>
+
+    <section class="section" aria-labelledby="welcome-heading">
+
+      <div class="block-ok">
+
+        <h2 class="section__title" id="welcome-heading">
+          ✅ 歓迎していること
+        </h2>
+
+        <ul class="ok-list">
+          <li>ファンアート・イラスト・コスプレ</li>
+          <li>二次創作（小説・動画・音楽など）</li>
+          <li>個人で楽しむ範囲での創作全般</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <section class="section" aria-labelledby="prohibited-heading">
+
+      <div class="block-ng">
+
+        <div class="block-ng__heading">
+          <h2 class="section__title" id="prohibited-heading">
+            🚫 禁止していること
+          </h2>
+        </div>
+
+        <article class="rule">
+          <div class="rule__header">
+            <span class="rule__number">①</span>
+            <h3 class="rule__title">
+              誰かを傷つける・差別する目的での利用
+            </h3>
+          </div>
+
+          <p class="rule__description">
+            人物・キャラクター・動物などへの攻撃・嫌がらせを目的とした創作は禁止です。
+            人種・性別・障害などの属性を理由とした差別的表現も禁止します。
+          </p>
+        </article>
+
+        <article class="rule">
+          <div class="rule__header">
+            <span class="rule__number">②</span>
+            <h3 class="rule__title">
+              成人向け・過度な暴力表現を含む創作
+            </h3>
+          </div>
+
+          <p class="rule__description">
+            公序良俗に反する表現、成人向け（R-18・R-18Gを含む）、
+            過度な暴力・残酷な描写を含む二次創作は一律で禁止します。
+          </p>
+        </article>
+
+        <article class="rule">
+          <div class="rule__header">
+            <span class="rule__number">③</span>
+            <h3 class="rule__title">
+              公式作品と誤解される見せ方
+            </h3>
+          </div>
+
+          <p class="rule__description">
+            公式が制作・運営しているかのような表現や表示は避けてください。
+          </p>
+
+          <p class="rule__example">
+            例）キャラクターになりすましたアカウントの作成、
+            公式企画に見えるキャンペーンの実施、公式ロゴの使用など。
+          </p>
+        </article>
+
+        <article class="rule">
+          <div class="rule__header">
+            <span class="rule__number">④</span>
+            <h3 class="rule__title">
+              AI学習・生成AIへの使用
+            </h3>
+          </div>
+
+          <p class="rule__description">
+            本作品・投稿画像をAI学習データとして使用することは、
+            現時点では禁止しています。方針を変更する場合は、このページでお知らせします。
+          </p>
+        </article>
+
+        <article class="rule">
+          <div class="rule__header">
+            <span class="rule__number">⑤</span>
+            <h3 class="rule__title">
+              特定の思想・宗教・政治的内容との結びつけ
+            </h3>
+          </div>
+
+          <p class="rule__description">
+            特定の思想・信条・宗教・政治的な主張と結びつける形での利用は禁止します。
+          </p>
+        </article>
+
+        <article class="rule">
+          <div class="rule__header">
+            <span class="rule__number">⑥</span>
+            <h3 class="rule__title">
+              ファン同士の批判・攻撃
+            </h3>
+          </div>
+
+          <p class="rule__description">
+            このガイドラインを根拠に、他のファンの創作を批判・攻撃することはご遠慮ください。
+            創作の楽しさをみんなで守るために、お互いへの配慮をお願いします。
+          </p>
+        </article>
+
+        <article class="rule">
+          <div class="rule__header">
+            <span class="rule__number">⑦</span>
+            <h3 class="rule__title">
+              ガイドラインの内容を誤解させる形での転載
+            </h3>
+          </div>
+
+          <p class="rule__description">
+            ガイドラインの一部だけを切り取るなどして、内容と異なる意味に受け取られる形で
+            拡散することはご遠慮ください。最新かつ正確な情報は、このページをご確認ください。
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="section" aria-labelledby="distribution-heading">
+
+      <div class="block-note">
+
+        <h2 class="section__title" id="distribution-heading">
+          📦 有償頒布について
+        </h2>
+
+        <ul class="note-list">
+          <li>販売はクリエイター自身が管理する形式に限ります（委託販売を含む）。</li>
+          <li>1作品あたり100部・増刷100部まで、売上上限は10万円（価格×部数）を目安としています。</li>
+          <li>転売目的での大量購入・第三者への再販は禁止です。</li>
+          <li>上記の範囲を超える場合は、事前にお問い合わせください。</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <section class="section" aria-labelledby="other-heading">
+
+      <div class="block-note">
+
+        <h2 class="section__title" id="other-heading">
+          📝 その他
+        </h2>
+
+        <ul class="note-list">
+          <li>ファン創作であることがわかるよう、作品内や投稿文への明記を推奨します。</li>
+          <li>他の方や会場が関わる場合は、そちらのルールを確認し、必ず従ってください。</li>
+          <li>他者の著作物を無断で組み合わせた二次創作は禁止です。第三者の権利を尊重してください。</li>
+          <li>二次創作活動において第三者との権利トラブルが発生した場合、Suuは責任を負いません。</li>
+          <li>このガイドラインは、より安心してファン活動を楽しんでいただくため、必要に応じて更新することがあります。</li>
+          <li>正確な内容については、最新版のこのページをご確認ください。</li>
+          <li>判断に迷う場合はお問い合わせください。</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <section class="contact" aria-labelledby="contact-heading">
+
+      <h2 class="section__title" id="contact-heading">
+        お問い合わせ
+      </h2>
+
+      <p>
+        ルールの解釈に迷う場合や、個別に確認したいことがあればお問い合わせください。
+      </p>
+
+      <!-- 後でお問い合わせフォームのURLに変更 -->
+      <a class="button" href="/contact/">
+        お問い合わせはこちら
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Suu</p>
+  </footer>
+
+</body>
+</html>
